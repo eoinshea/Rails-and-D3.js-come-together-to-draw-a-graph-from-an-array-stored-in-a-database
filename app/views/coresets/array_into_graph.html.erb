@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%# Modernizr is required for Zurb Foundation %>
+  <%= javascript_include_tag 'vendor/modernizr' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script type="text/javascript" src="http://mbostock.github.com/d3/d3.js?1.29.1"></script>
+  <script type="text/javascript" src="http://mbostock.github.com/d3/d3.geom.js?1.29.1"></script>
+  <script type="text/javascript" src="http://mbostock.github.com/d3/d3.layout.js?1.29.1"></script>
+  <script type="text/javascript" src="http://127.0.0.1:3000/coreset.js"></script>
+
+  <title>Collapsible Tree Example</title>
+
+  <style>
+    .node circle {
+      fill: #fff;
+      stroke: steelblue;
+      stroke-width: 3px;
+    }
+    .node text { font: 12px sans-serif; }
+    .link {
+      fill: none;
+      stroke: #ccc;
+      stroke-width: 2px;
+    }
+
+  </style>
+  <script>
+
+//    nodesX = [{'value': nodeArray[0], 'child1': nodeArray[7], 'child2':nodeArray[3], 'parent' : 'null'},
+//      {'value': nodeArray[1], 'child1': nodeArray[7], 'child2':nodeArray[3], 'parent' : nodeArray[0]},
+//      {'value': nodeArray[0], 'child1': nodeArray[7], 'child2':nodeArray[3], 'parent' : 'null'},
+//      {'value': nodeArray[0], 'child1': nodeArray[7], 'child2':nodeArray[3], 'parent' : 'null'},
+//      {'value': nodeArray[0], 'child1': nodeArray[7], 'child2':nodeArray[3], 'parent' : 'null'},
+//      {'value': nodeArray[0], 'child1': nodeArray[7], 'child2':nodeArray[3], 'parent' : 'null'},
+//      {'value': nodeArray[0], 'child1': nodeArray[7], 'child2':nodeArray[3], 'parent' : 'null'},];
+
+   nodeArray = [  3,  3,  7,   6,   6,   7,    15,    10,   10,    14,    13,    13,    14,    15,    23,    18,    18,    22,    21,    21,    22,    23,    0  ];
+
+    nodes = [];
+    links = [];
+
+    function  left(i) {
+      return 2*i + 1;
+    }
+    function  right(i) {
+      return 2*i + 2;
+    }
+    function  parent(i) {
+      console.log("Parent =" + (i-1)/2);
+      return (i-1)/2;
+    }
+
+    var index = 0;
+    do{
+      if (index === 0) {
+        var node = {
+          'value': nodeArray[index],
+          'child1_index': left(index),
+          'child1_value': nodeArray[left(index)],
+          'child2_index': right(index),
+          'child2_value': nodeArray[right(index)],
+          'parent_index' : 'null',
+          'parent_value' : 'null'
+        };
+      } else {
+        var node = {
+          'value': nodeArray[index],
+          'child1_index': left(index),
+          'child1_value': nodeArray[left(index)],
+          'child2_index': right(index),
+          'child2_value': nodeArray[right(index)],
+          'parent_index' :parent(index),
+          'parent_value' : nodeArray[parent(index)],
+          'index' : index
+        };
+      }
+      nodes.push(node);
+      index++;
+    } while (index != nodeArray.length)
+    console.log(nodes);
+    alert(nodes);
+    //      console.log("ROOT NODE");
+    //      console.log("Left child is: " + left(index));
+    //      console.log("Right child is: " + right(index));
+    //    }
+    //    else {
+    //      nodeArray[index].x = gap * (index + 1) - 2 * radius;
+    //      nodeArray[index].y = width / 3;
+    //      console.log(nodeArray[index].y);
+    //      console.log(nodeArray[index].x);
+    //
+    //      console.log("Left child is: " + left(index));
+    //      console.log("Right child is: " + right(index));
+    //      nodes.push('value' : nodeArray[index],
+    //          'child1' : left(index),
+    //          'child2' : right(index),
+    //          'parent':  parent(index));
+    //      links.push({source: nodeArray[parent(index)], target: nodeArray[left(index)]});
+    //      console.log("Parent is: " + parent(index));
+    //    }
+    //  } while (index = index + 1);
+
+  </script>
+</head>
+
+<body>
+
+
+
+
+<div class="row">
+
+  <div class="large-4 small-12 columns">
+    <h5 class="subheader">Graph</h5>
+    <div id="tree">
+    </div>
+    <!--<img src="http://placehold.it/500x500&amp;text=Logo">-->
+    <div id="tree">
+    </div>
+  </div>
+
+
+
+
+
+  <script>
+    alert(data);
+    var treeData = [
+      {
+        "name": "Top Level",
+        "parent": "null",
+        "children": [
+          {
+            "name": "Level 2: A",
+            "parent": "Top Level",
+            "children": [
+              {
+                "name": "Son of A",
+                "parent": "Level 2: A"
+              },
+              {
+                "name": "Daughter of A",
+                "parent": "Level 2: A"
+              }
+            ]
+          },
+          {
+            "name": "Level 2: B",
+            "parent": "Top Level"
+          }
+        ]
+      }
+    ];
+    // ************** Generate the tree diagram	 *****************
+    var margin = {top: 40, right: 120, bottom: 20, left: 120},
+        width = 960 - margin.right - margin.left,
+        height = 500 - margin.top - margin.bottom;
+
+    var i = 0;
+    var tree = d3.layout.tree()
+        .size([height, width]);
+    var diagonal = d3.svg.diagonal()
+        .projection(function(d) { return [d.x, d.y]; });
+    var svg = d3.select("#tree").append("svg")
+        .attr("width", width + margin.right + margin.left)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    root = treeData[0];
+
+    update(root);
+    function update(source) {
+      // Compute the new tree layout.
+      var nodes = tree.nodes(root).reverse(),
+          links = tree.links(nodes);
+      // Normalize for fixed-depth.
+      nodes.forEach(function(d) { d.y = d.depth * 100; });
+      // Declare the nodes…
+      var node = svg.selectAll("g.node")
+          .data(nodes, function(d) { return d.id || (d.id = ++i); });
+      // Enter the nodes.
+      var nodeEnter = node.enter().append("g")
+          .attr("class", "node")
+          .attr("transform", function(d) {
+            return "translate(" + d.x + "," + d.y + ")"; });
+      nodeEnter.append("circle")
+          .attr("r", 10)
+          .style("fill", "#fff");
+      nodeEnter.append("text")
+          .attr("y", function(d) {
+            return d.children || d._children ? -18 : 18; })
+          .attr("dy", ".35em")
+          .attr("text-anchor", "middle")
+          .text(function(d) { return d.name; })
+          .style("fill-opacity", 1);
+      // Declare the links…
+      var link = svg.selectAll("path.link")
+          .data(links, function(d) { return d.target.id; });
+      // Enter the links.
+      link.enter().insert("path", "g")
+          .attr("class", "link")
+          .attr("d", diagonal);
+    }
+  </script>
+
+</body>
+</html>

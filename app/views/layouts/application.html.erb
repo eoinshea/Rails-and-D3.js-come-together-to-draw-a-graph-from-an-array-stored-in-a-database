@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Coreset tree" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Mit App" %>">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%# Modernizr is required for Zurb Foundation %>
+  <%= javascript_include_tag 'vendor/modernizr' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+
+  <style type="text/css">
+      .full-width {
+
+          max-width: 1400px;
+
+      }
+
+      .footer {
+
+          background-color: #2980b9;
+
+          padding: 2rem 4rem;
+
+          text-align: center;
+
+          color: #fff;
+
+      }
+
+      .footer i {
+
+          font-size: 100px;
+
+      }
+
+
+
+      .footer h4 {
+
+          color: #fff;
+
+          font-size: 1em;
+
+          font-weight: 400;
+
+          text-transform: uppercase;
+
+          margin-top: 2.5rem;
+
+          margin-bottom: 10px;
+
+      }
+
+      .footer p, .footer a {
+
+          font-weight: 300;
+
+          font-size: .8em;
+
+          color: #fff;
+
+      }
+
+
+
+      @media only screen and (min-width: 40.063em) {
+
+          .footer .columns:nth-child(n+2) {
+
+              border-left: 1px solid #b3b3b3;
+
+              min-height: 280px;
+
+          }
+
+      }
+
+      .footer-links {
+
+          list-style-type: none;
+
+      }
+
+      .footer-links li {
+
+          margin-top: .5em;
+
+      }
+
+
+      circle {
+          stroke-width: 5px;
+      }
+
+      line {
+          stroke: #999;
+      }
+
+  </style>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<header>
+  <%= render 'layouts/navigation' %>
+</header>
+<main role="main">
+  <br>
+  <br>
+  <%= render 'layouts/messages' %>
+  <%= yield %>
+</main>
+<footer class="row">
+  <div class="large-12 columns">
+    <hr>
+    <div class="row">
+      <div class="large-4 columns">
+        <p>© Copyright by MIT</p>
+      </div>
+      <div class="large-5 columns">
+        <ul class="inline-list right">
+          <li><a href="#">myemail@mit.edu</a></li>
+          <li><a href="#">My Site</a></li>
+          <li><a href="#">My Department</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+</footer>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<p id="notice"><%= notice %></p>
+
+<script>
+  var coreset_name = '<%= @coreset.name.downcase %>'
+</script>
+
+<div class="row">
+  <div class=" large-4 columns">
+    <h6 id="leaf-size">Leaf Size : </h6>
+    <h6 id="selected-time-span">Selected Time Span : </h6>
+    <h6 id="keyframe-time-span" >Keyframe time Span : </h6>
+    <h6 id="num-segments">Num Segments : </h6>
+  </div>
+
+  <!--</div>-->
+
+  <div class="large-3 columns" style="margin-right:200px">
+    <h2 styling="margin-left:50px;">Key Frames</h2>
+    <div class="small-3 columns">
+      <p id="KeyframeAbsIdx1"></p>
+      <p id="KeyframeAbsIdx2"></p>
+      <p id="KeyframeAbsIdx3"></p>
+    </div>
+    <div class="small-3 columns">
+      <p id="KeyframeAbsIdx4"></p>
+      <p id="KeyframeAbsIdx5"></p>
+      <p id="KeyframeAbsIdx6"></p>
+    </div>
+    <div class="small-3 columns" style="margin-right:50px;">
+      <p id="KeyframeAbsIdx7"></p>
+      <p id="KeyframeAbsIdx8"></p>
+      <p id="KeyframeAbsIdx9"></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="large-3 columns" style="margin-left:-350px;">
+    <h5 class="subheader">Graph</h5>
+    <!--<img src="http://placehold.it/500x500&amp;text=Logo">-->
+    <div id="tree">
+    </div>
+  </div>
+
+  <div class="large-8 columns">
+    <div class="large-4 small-6 columns">
+      <img id ="frame1" src="http://placehold.it/300x300&amp;text=Frame1">
+    </div>
+    <div class="large-4 small-6 columns">
+      <img id ="frame2" src="http://placehold.it/300x300&amp;text=Frame2">
+    </div>
+    <div class="large-4 small-6 columns">
+      <img id ="frame3" src="http://placehold.it/300x300&amp;text=Frame3">
+    </div>
+    <div class="large-4 small-6 columns">
+      <img id ="frame4" src="http://placehold.it/300x300&amp;text=Frame4">
+    </div>
+    <div class="large-4 small-6 columns">
+      <img id ="frame5" src="http://placehold.it/300x300&amp;text=Frame5">
+    </div>
+    <div class="large-4 small-9 columns">
+      <img id ="frame6" src="http://placehold.it/300x300&amp;text=Frame6">
+    </div>
+    <div class="large-4 small-6 columns">
+      <img id ="frame7" src="http://placehold.it/300x300&amp;text=Frame7">
+    </div>
+    <div class="large-4 small-6 columns">
+      <img id ="frame8" src="http://placehold.it/300x300&amp;text=Frame8">
+    </div>
+    <div class="large-4 small-9 columns">
+      <img id ="frame9" src="http://placehold.it/300x300&amp;text=Frame9">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+  var data = <%= raw @coreset.graph_data.to_json %>;
+</script>
+<%= javascript_include_tag 'coresets' %>
+<script>
+  function update_images(i) {
+
+    var node = i+1;
+    var name = '<%= @coreset.name.downcase %>' + 's' ;
+
+    document.getElementById('frame1').src='/frames/' + name + '/'+ node.toString() +'/1.jpg';
+    document.getElementById('frame2').src='/frames/' + name + '/'+ node.toString() +'/2.jpg';
+    document.getElementById('frame3').src='/frames/' + name + '/'+ node.toString() +'/3.jpg';
+    document.getElementById('frame4').src='/frames/' + name + '/'+ node.toString() +'/4.jpg';
+    document.getElementById('frame5').src='/frames/' + name + '/'+ node.toString() +'/5.jpg';
+    document.getElementById('frame6').src='/frames/' + name + '/'+ node.toString() +'/6.jpg';
+    document.getElementById('frame7').src='/frames/' + name + '/'+ node.toString() +'/7.jpg';
+    document.getElementById('frame8').src='/frames/' + name + '/'+ node.toString() +'/8.jpg';
+    document.getElementById('frame9').src='/frames/' + name + '/'+ node.toString() +'/9.jpg';
+
+  }
+</script>
+<%= javascript_include_tag 'draw_tree' %>
+
+<script>
+
+  <% %>
+
+
+
+  function color_nodes(i)
+  {
+
+  }
+
+  function update_leafs()
+  {
+    //if node is a leaf and not at leaf 0 depth, increase depth of children and parents
+  }
+
+
+</script>
+
+
+<style>
+  .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px;
+  }
+  .node text { font: 12px sans-serif; }
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+  }
+
+  #tree-row {
+    margin-right: -50px;
+  }
+
+</style>
+<script>
+
+  // get coreset id and coreset_id is also stored in frame but not associated
+
+  var node = 23;
+  var name = '<%= @coreset.name.downcase %>' + 's' ;
+
+
+  document.getElementById('frame1').src='/frames/' + name + '/'+ node.toString() +'/1.jpg';
+  document.getElementById('frame2').src='/frames/' + name + '/'+ node.toString() +'/2.jpg';
+  document.getElementById('frame3').src='/frames/' + name + '/'+ node.toString() +'/3.jpg';
+  document.getElementById('frame4').src='/frames/' + name + '/'+ node.toString() +'/4.jpg';
+  document.getElementById('frame5').src='/frames/' + name + '/'+ node.toString() +'/5.jpg';
+  document.getElementById('frame6').src='/frames/' + name + '/'+ node.toString() +'/6.jpg';
+  document.getElementById('frame7').src='/frames/' + name + '/'+ node.toString() +'/7.jpg';
+  document.getElementById('frame8').src='/frames/' + name + '/'+ node.toString() +'/8.jpg';
+  document.getElementById('frame9').src='/frames/' + name + '/'+ node.toString() +'/9.jpg';
+
+
+
+
+
+</script>
+
+<%= link_to 'Back', coresets_path %>

@@ -1,0 +1,13 @@
+<h1>Upload ZIP with nested images ie 1/1.jpg etc</h1>
+
+<%= form_tag('upload', :multipart => true ,method: :post) do %>
+    <%= file_field_tag 'zip_file' , class: 'button' %><br />
+
+    <%= hidden_field_tag :coreset_id , @coreset.id, class: 'button' %>
+    </p>
+    <p>
+      <%= submit_tag "Upload", class: 'button' %>
+    </p>
+
+<% end %>
+

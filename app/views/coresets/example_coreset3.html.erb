@@ -1,0 +1,79 @@
+<script type="text/javascript" src="coreset_raw.json"></script>
+<script>
+
+   var data = <%= @coreset.graph_data.to_json %>;
+
+  var numspannedframes = data.NumSpannedFrames
+  var nodeArray = data.Nodes //get the 1D node array
+
+  var nodes = []  //array for parent node setup with data
+  var links = []  //array for target to
+
+  var leafsize = data.LeafSize
+
+
+  alert("Number of nodes = " + data.NumNodes);
+  alert("Length of nodes data = " + data.Data.length);
+
+  function  left(i) {
+    return 2*i + 1;
+  }
+  function  right(i) {
+    return 2*i + 2;
+  }
+  function  parent(i) {
+    return (i-1)/2;
+  }
+
+  var indices = nodeArray.length;
+  var index = 0;
+  do {
+    console.log("index = " + index + "," + "value = " + nodeArray[index]);
+    console.log(index);
+    //if root node
+    if (index === 0) {
+      nodeArray[index].x = width / 2;
+      nodeArray[index].y = height / 2;
+      nodes.push(nodeArray[index]);
+      console.log("ROOT NODE");
+      console.log("Left child is: " + left(index));
+      console.log("Right child is: " + right(index));
+    }
+    else
+    {
+      nodeArray[index].x = gap * (index +1) -2*radius;
+      nodeArray[index].y = width/3;
+      console.log( nodeArray[index].y);
+      console.log( nodeArray[index].x);
+
+      console.log("Left child is: " + left(index));
+      console.log("Right child is: " + right(index));
+      nodes.push(nodeArray[index]);
+      links.push({source: nodeArray[parent(index)],target: nodeArray[left(index)]});
+      console.log("Parent is: " + parent(index));
+    }
+    index = index+1;
+  } while (index < nodeArray.length);
+
+
+  //update tree, frames, and text fields and data when timebar or nodes are clicked
+  function update_tree(){
+
+  };
+
+
+
+// flat data example
+//  var data = [
+//    { "name" : "Level 2: A", "parent":"Top Level" },
+//    { "name" : "Top Level", "parent":"null" },
+//    { "name" : "Son of A", "parent":"Level 2: A" },
+//    { "name" : "Daughter of A", "parent":"Level 2: A" },
+//    { "name" :"Level 2: B", "parent":"Top Level" } ]
+
+
+
+
+    
+
+</script>

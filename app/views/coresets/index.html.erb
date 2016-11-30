@@ -1,0 +1,30 @@
+<h1>Listing coresets</h1>
+
+
+<%= render 'layouts/messages' %>
+<table>
+  <thead>
+  <tr>
+    <th><h4>ID</h4></th>
+    <th><h4>Name</h4></th>
+    <th><h4>Press to View</h4></th>
+    <th><h4>Upload images</h4></th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @coresets.each do |coreset| %>
+      <tr>
+        <td><%= coreset.id %> </td>
+        <td><%= coreset.name  %></td>
+        <td><%= link_to 'View', coreset, class: 'button info ' %></td>
+        <td><%= link_to 'Image Upload', new_upload_frames_path(:coreset_id => coreset.id) , :method => :get, class: 'button } info ' %></td>
+      </tr>
+
+  <% end %>
+  </table>
+<br>
+<br>
+
+<h3><%= link_to 'Add New', new_coreset_path, class: 'button info' %></h3>
+
+

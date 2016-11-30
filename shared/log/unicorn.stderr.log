@@ -1,0 +1,61 @@
+I, [2015-09-30T19:39:21.801141 #19948]  INFO -- : Refreshing Gem list
+/home/eoin/mit-app/config/initializers/devise.rb:15:in `+': no implicit conversion of nil into String (TypeError)
+	from /home/eoin/mit-app/config/initializers/devise.rb:15:in `block in <top (required)>'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/devise-3.5.2/lib/devise.rb:278:in `setup'
+	from /home/eoin/mit-app/config/initializers/devise.rb:3:in `<top (required)>'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/activesupport-4.1.8/lib/active_support/dependencies.rb:241:in `load'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/activesupport-4.1.8/lib/active_support/dependencies.rb:241:in `block in load'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/activesupport-4.1.8/lib/active_support/dependencies.rb:232:in `load_dependency'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/activesupport-4.1.8/lib/active_support/dependencies.rb:241:in `load'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/engine.rb:648:in `block in load_config_initializer'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/activesupport-4.1.8/lib/active_support/notifications.rb:161:in `instrument'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/engine.rb:647:in `load_config_initializer'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/engine.rb:612:in `block (2 levels) in <class:Engine>'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/engine.rb:611:in `each'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/engine.rb:611:in `block in <class:Engine>'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/initializable.rb:30:in `instance_exec'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/initializable.rb:30:in `run'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/initializable.rb:55:in `block in run_initializers'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:226:in `block in tsort_each'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:348:in `block (2 levels) in each_strongly_connected_component'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:420:in `block (2 levels) in each_strongly_connected_component_from'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:429:in `each_strongly_connected_component_from'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:419:in `block in each_strongly_connected_component_from'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/initializable.rb:44:in `each'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/initializable.rb:44:in `tsort_each_child'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:413:in `call'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:413:in `each_strongly_connected_component_from'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:347:in `block in each_strongly_connected_component'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `each'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `call'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:345:in `each_strongly_connected_component'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:224:in `tsort_each'
+	from /home/eoin/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/tsort.rb:203:in `tsort_each'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/initializable.rb:54:in `run_initializers'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/railties-4.1.8/lib/rails/application.rb:300:in `initialize!'
+	from /home/eoin/mit-app/config/environment.rb:5:in `<top (required)>'
+	from config.ru:4:in `require'
+	from config.ru:4:in `block in <main>'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/rack-1.5.5/lib/rack/builder.rb:55:in `instance_eval'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/rack-1.5.5/lib/rack/builder.rb:55:in `initialize'
+	from config.ru:1:in `new'
+	from config.ru:1:in `<main>'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/unicorn-4.9.0/lib/unicorn.rb:48:in `eval'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/unicorn-4.9.0/lib/unicorn.rb:48:in `block in builder'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:768:in `call'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:768:in `build_app!'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/unicorn-4.9.0/lib/unicorn/http_server.rb:137:in `start'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/gems/unicorn-4.9.0/bin/unicorn:126:in `<top (required)>'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/bin/unicorn:23:in `load'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/bin/unicorn:23:in `<main>'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/bin/ruby_executable_hooks:15:in `eval'
+	from /home/eoin/.rvm/gems/ruby-2.2.1@mit-app/bin/ruby_executable_hooks:15:in `<main>'
+I, [2015-09-30T19:41:16.754773 #20269]  INFO -- : Refreshing Gem list
+I, [2015-09-30T19:41:18.222046 #20269]  INFO -- : listening on addr=/home/eoin/mit-app/shared/sockets/unicorn.sock fd=11
+I, [2015-09-30T19:41:18.222201 #20269]  INFO -- : worker=0 spawning...
+I, [2015-09-30T19:41:18.223284 #20269]  INFO -- : worker=1 spawning...
+I, [2015-09-30T19:41:18.224314 #20269]  INFO -- : master process ready
+I, [2015-09-30T19:41:18.231957 #20273]  INFO -- : worker=0 spawned pid=20273
+I, [2015-09-30T19:41:18.234467 #20273]  INFO -- : worker=0 ready
+I, [2015-09-30T19:41:18.235205 #20275]  INFO -- : worker=1 spawned pid=20275
+I, [2015-09-30T19:41:18.240163 #20275]  INFO -- : worker=1 ready

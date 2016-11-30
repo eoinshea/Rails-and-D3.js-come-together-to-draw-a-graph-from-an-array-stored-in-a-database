@@ -1,0 +1,13 @@
+<h1>Name and JSON</h1>
+
+<%= form_for @coreset, url: {action: "create"} do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :graph_data %>
+    <p>just paste your json here</p>
+    <%= f.text_area :graph_data %>
+    <%= f.submit "Create", class: 'button' %>
+<% end %>
+
+
+<br>

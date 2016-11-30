@@ -1,0 +1,109 @@
+Left is always the smaller index
+
+,"Nodes":[3,3,7,6,6,7,15,10,10,14,13,13,14,15,23,18,18,22,21,21,22,23,0],
+
+To get children(i) you must search the nodes array and find the *indices* where nodes = i
+
+To get parent(i) you just call nodes(i) !
+
+That's what nodes is for!
+
+nodeArray = [blah,blah,blah]
+treeData = []
+
+index = 0
+build_tree(i){
+
+    children = []
+    var parent = Nodes(i) ;
+    var child1 = nodeArray.indexOf(i);
+    var child2 = nodeArray.indexOf(i);
+    //if leaf
+
+        if child1 && child2 === undefined
+
+    else
+        {
+        if (child1 < child2)
+            {
+               var left_child = child1;
+            }
+            else
+            {
+               var left_child = child2;
+            }
+        }
+        node = nodeArray[0];
+
+
+
+    //if merge
+    if parent(i) === undefined , it is the root
+        {
+         else
+        }
+
+
+
+    // links =
+
+
+
+
+    nodes.push{
+}
+
+
+You want to make this:
+
+  var treeData = [
+    {
+      "name": "0",
+      "value" : 0,
+      "parent": "null",
+      "children": [
+        {
+          "name": "17",
+          "parent": "0",
+          "value" : 8,
+          "children": [
+            {
+              "name": "15",
+              "parent": "18",
+              "value" : 7
+            },
+            {
+              "name": "7",
+              "parent": "18",
+              "value" : 8
+            }
+          ]
+        },
+        {
+          "name": "21",
+          "parent": "0",
+          "value" : 21,
+
+        }
+      ]
+    }
+  ];
+
+
+if index(dataNode) === Nodes[index] then parent
+if Node=merge, then find its children and push them to the right place (an array called children)
+// maybe one is not a merge or leaf ?
+
+    // if parent ===
+    // if merge then get its children, fuck. no u can do that derp
+    // but first node is a leaf, so what faggot deal with it
+    // need to do something more menial like type random shit to myself
+
+
+get_parent(i)
+
+RAILS_ENV=production rake db:drop:all && RAILS_ENV=production rake db:create:all && RAILS_ENV=production &&   RAILS_ENV=production rake db:migrate && RAILS_ENV=production && rake db:seed
+ rake db:drop && rake db:create && rake db:migrate  && rake db:seed
+
+
+{"utf8"=>"✓", "authenticity_token"=>"iC02cXAwDWGy8+bjwC3bk7ibV9QIFucfFT1Qi9CS+1Q=", "zip_file"=>#<ActionDispatch::Http::UploadedFile:0x00000003f8d100 @tempfile=#<Tempfile:/tmp/RackMultipart20151214-26484-1596nik>, @original_filename="frames.zip", @content_type="application/zip", @headers="Content-Disposition: form-data; name=\"zip_file\"; filename=\"frames.zip\"\r\nContent-Type: application/zip\r\n">, "commit"=>"Upload"}
