@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Mit App
 ================
 
@@ -36,3 +37,6 @@ Credits
 
 License
 -------
+=======
+# binary-heap-visualisation
+>>>>>>> b37c5b2d5b56265928fe5dba8b0567c502f40dd4
