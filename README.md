@@ -1,42 +1,9 @@
-<<<<<<< HEAD
-Mit App
-================
-
-MIT coreset app 
-
-
-
-
-
-Ruby on Rails
--------------
-
 This application requires:
 
 - Ruby 2.2.1
 - Rails 4.1.8
+- Postgres
+- D3.js
+- Jquery
 
-
-Getting Started
----------------
-
-Documentation and Support
--------------------------
-
-Issues
--------------
-
-Similar Projects
-----------------
-
-Contributing
-------------
-
-Credits
--------
-
-License
--------
-=======
-# binary-heap-visualisation
->>>>>>> b37c5b2d5b56265928fe5dba8b0567c502f40dd4
+Has a form for JSON data that creates a binary tree using 3d.js.
